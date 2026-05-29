@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Leaflet popup styles ───────────────────────────────────────────────── */
+.leaflet-popup-content-wrapper {
+  background: #1e2030 !important;
+  border: 1px solid #374151 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+  min-width: 200px;
+}
+
+.pot-popup {
+  padding: 0;
+}
+
+.pot-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 0;
+}
+
+.pot-popup-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.pot-popup-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f3f4f6;
+  line-height: 1.3;
+}
+
+.pot-popup-cat {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 1px;
+}
+
+.pot-popup-desc {
+  font-size: 12px;
+  color: #d1d5db;
+  padding: 6px 12px 10px;
+  margin: 0;
+  line-height: 1.5;
+  border-top: 1px solid #374151;
+}
+
+.pot-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 12px 10px;
+  border-top: 1px solid #374151;
+}
+
+.pot-tag {
+  font-size: 10px;
+  background: #374151;
+  color: #9ca3af;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  text-transform: capitalize;
+}
+
+.leaflet-popup-close-button {
+  color: #6b7280 !important;
+  font-size: 18px !important;
+  padding: 4px 8px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #f3f4f6 !important;
+}
+
+/* ─── Cluster marker overrides ───────────────────────────────────────────── */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background: transparent !important;
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background: transparent !important;
+}
