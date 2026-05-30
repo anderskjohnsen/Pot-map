@@ -13,8 +13,7 @@ const MAP_SIZE = 4096;
 
 const BASE = import.meta.env.BASE_URL;
 const MAP_IMAGES: Record<MapId, string> = {
-  gondwa:  `${BASE}maps/gondwa.jpg`,
-  panjura: `${BASE}maps/panjura.jpg`,
+  gondwa: `${BASE}maps/gondwa.jpg`,
 };
 
 interface Props {

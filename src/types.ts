@@ -1,20 +1,20 @@
 export type ResourceCategory =
-  | 'herb_food'
-  | 'carn_food'
-  | 'water'
-  | 'mineral'
-  | 'nesting'
-  | 'landmark';
+  | 'acorn'
+  | 'lychee'
+  | 'amanita'
+  | 'milkcap'
+  | 'tigernut'
+  | 'root';
 
-export type MapId = 'gondwa' | 'panjura';
+export type MapId = 'gondwa';
 
 export interface Resource {
   id: string;
   name: string;
   category: ResourceCategory;
   mapId: MapId;
-  x: number; // normalized 0–4096
-  y: number; // normalized 0–4096
+  x: number; // 0–4096 grid, origin NW, x east
+  y: number; // 0–4096 grid, origin NW, y south
   description?: string;
   tags?: string[];
 }
@@ -26,15 +26,14 @@ export interface CategoryMeta {
 }
 
 export const CATEGORY_META: Record<ResourceCategory, CategoryMeta> = {
-  herb_food: { label: 'Herb Food', color: '#4ade80', icon: '🌿' },
-  carn_food: { label: 'Carn Food', color: '#f87171', icon: '🦴' },
-  water:     { label: 'Water',     color: '#60a5fa', icon: '💧' },
-  mineral:   { label: 'Minerals',  color: '#facc15', icon: '🪨' },
-  nesting:   { label: 'Nesting',   color: '#f0abfc', icon: '🥚' },
-  landmark:  { label: 'Landmark',  color: '#94a3b8', icon: '📍' },
+  acorn:    { label: 'Acorn',    color: '#c2843f', icon: '🌰' },
+  lychee:   { label: 'Lychee',   color: '#e0457b', icon: '🍒' },
+  amanita:  { label: 'Amanita',  color: '#ef4444', icon: '🍄' },
+  milkcap:  { label: 'Milkcap',  color: '#f59e0b', icon: '🍄' },
+  tigernut: { label: 'Tigernut', color: '#a3a31f', icon: '🥜' },
+  root:     { label: 'Root',     color: '#b06b3a', icon: '🥕' },
 };
 
 export const MAP_LABELS: Record<MapId, string> = {
   gondwa: 'Gondwa',
-  panjura: 'Panjura',
 };
