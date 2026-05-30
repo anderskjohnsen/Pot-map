@@ -26,14 +26,6 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
-      - name: Install Python deps
-        run: pip install Pillow numpy
-
-      - name: Generate map images
-        run: |
-          python3 scripts/generate_map.py
-          python3 scripts/generate_panjura.py
-
       - name: Install JS deps
         run: npm ci
 

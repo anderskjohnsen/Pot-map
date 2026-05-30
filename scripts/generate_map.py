@@ -144,6 +144,7 @@ img = ImageEnhance.Sharpness(img).enhance(1.5)
 img = ImageEnhance.Contrast(img).enhance(1.2)
 img = ImageEnhance.Color(img).enhance(1.1)
 
-out = "/home/user/Sproutbackup/pot-map/public/maps/gondwa.jpg"
+import os
+out = os.path.join(os.path.dirname(__file__), "../public/maps/gondwa.jpg")
 img.save(out, "JPEG", quality=88)
 print(f"Saved {SIZE}x{SIZE} → {out}")

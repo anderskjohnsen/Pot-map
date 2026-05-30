@@ -112,6 +112,7 @@ img = ImageEnhance.Sharpness(img).enhance(1.5)
 img = ImageEnhance.Contrast(img).enhance(1.2)
 img = ImageEnhance.Color(img).enhance(1.15)
 
-out = "/home/user/Sproutbackup/pot-map/public/maps/panjura.jpg"
+import os
+out = os.path.join(os.path.dirname(__file__), "../public/maps/panjura.jpg")
 img.save(out, "JPEG", quality=88)
 print(f"Saved {SIZE}x{SIZE} → {out}")
