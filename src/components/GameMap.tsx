@@ -11,9 +11,10 @@ import { getCategoryIcon } from './markerIcons';
 // Logical coordinate space (matches resource data)
 const MAP_SIZE = 4096;
 
+const BASE = import.meta.env.BASE_URL;
 const MAP_IMAGES: Record<MapId, string> = {
-  gondwa:  '/maps/gondwa.jpg',
-  panjura: '/maps/panjura.jpg',
+  gondwa:  `${BASE}maps/gondwa.jpg`,
+  panjura: `${BASE}maps/panjura.jpg`,
 };
 
 interface Props {

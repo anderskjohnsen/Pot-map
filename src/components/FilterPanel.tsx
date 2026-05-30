@@ -10,6 +10,7 @@ interface Props {
   search: string;
   onSearchChange: (v: string) => void;
   totalVisible: number;
+  onClose?: () => void;
 }
 
 const ALL_CATEGORIES = Object.keys(CATEGORY_META) as ResourceCategory[];
@@ -18,14 +19,23 @@ const ALL_MAPS = Object.keys(MAP_LABELS) as MapId[];
 export default function FilterPanel({
   activeMap, onMapChange,
   activeCategories, onToggleCategory,
-  counts, search, onSearchChange, totalVisible,
+  counts, search, onSearchChange, totalVisible, onClose,
 }: Props) {
   return (
-    <aside className="w-64 shrink-0 bg-gray-900 border-r border-gray-700 flex flex-col overflow-hidden">
+    <aside className="w-72 h-full shrink-0 bg-gray-900 border-r border-gray-700 flex flex-col overflow-y-auto overflow-x-hidden">
       {/* Header */}
-      <div className="p-4 border-b border-gray-700 bg-gray-800">
-        <h1 className="text-lg font-bold text-white tracking-wide">🦕 PoT Map</h1>
-        <p className="text-xs text-gray-400 mt-0.5">Path of Titans Resource Finder</p>
+      <div className="p-4 border-b border-gray-700 bg-gray-800 flex items-start justify-between">
+        <div>
+          <h1 className="text-lg font-bold text-white tracking-wide">🦕 PoT Map</h1>
+          <p className="text-xs text-gray-400 mt-0.5">Path of Titans Resource Finder</p>
+        </div>
+        {onClose && (
+          <button onClick={onClose} className="md:hidden text-gray-400 hover:text-white p-1 ml-2 mt-0.5" aria-label="Close">
+            <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <line x1="2" y1="2" x2="16" y2="16"/><line x1="16" y1="2" x2="2" y2="16"/>
+            </svg>
+          </button>
+        )}
       </div>
 
       {/* Map selector */}
